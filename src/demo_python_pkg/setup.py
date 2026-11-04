@@ -24,7 +24,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'py_node = demo_python_pkg.ros2_python_node:main'
+            'py_node = demo_python_pkg.ros2_python_node:main',
+            'person_node = demo_python_pkg.person_node:main',
+            'writer_node = demo_python_pkg.writer_node:main'
         ],
     },
 )
