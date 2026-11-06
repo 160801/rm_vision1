@@ -1,3 +1,4 @@
+import rclpy
 from demo_python_pkg.person_node import PersonNode
 
 class WriterNode(PersonNode):
@@ -7,9 +8,9 @@ class WriterNode(PersonNode):
         self.book = book
 
 def main():
+    rclpy.init()
     node = WriterNode('法外狂徒张三', 18, '论快速入狱')
     node.eat('鱼香肉丝')
-    print(f'{node.name} 正在写《{node.book}》')
-
-if __name__ == '__main__':
-    main()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
